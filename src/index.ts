@@ -9,7 +9,11 @@ const schema = loadSchemaSync(join('src', './schemas/schema.gql'), { loaders: [n
 const resolvers = {
   Query: {
     hello: (_: any, { name }: { name: string }) => `Hello, ${name}`,
-    post: (_: any, { id }: { id: string }) => `${id}`
+    post: (_: any, { id }: { id: string }) => ({
+      id: id,
+      title: 'the title',
+      content: 'the content'
+    })
   }
 };
 

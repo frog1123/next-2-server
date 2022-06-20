@@ -1,4 +1,10 @@
 type Query {
   hello(name: String!): String!
-  post(id: ID): String!
+  post(id: ID): Post!
+}
+
+type Post {
+  id: ID!
+  title: String!
+  content: String!
 }
